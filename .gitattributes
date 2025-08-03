@@ -1,6 +1,10 @@
 *.dart linguist-language=Dart
-*.kt linguist-language=Kotlin
-*.java linguist-language=Java
-*.cpp linguist-language=ignore
-*.h linguist-language=ignore
 *.c linguist-language=ignore
+*.h linguist-language=ignore
+*.cpp linguist-language=ignore
+*.hpp linguist-language=ignore
+*.cc linguist-language=ignore
+*.cxx linguist-language=ignore
+CMakeLists.txt linguist-language=ignore
+*.cmake linguist-language=ignore
+
