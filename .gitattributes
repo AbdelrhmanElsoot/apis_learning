@@ -1,4 +1,6 @@
-CMakeLists.txt linguist-detectable=false
-*.cpp linguist-detectable=false
-*.h linguist-detectable=false
 *.dart linguist-language=Dart
+*.kt linguist-language=Kotlin
+*.java linguist-language=Java
+*.cpp linguist-language=ignore
+*.h linguist-language=ignore
+*.c linguist-language=ignore
