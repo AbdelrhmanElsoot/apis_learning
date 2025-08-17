@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   NetworkingHelper getData = NetworkingHelper();
-                  getData.deleteData(id: 5);
+                  getData.deleteData(id: 1);
                 },
                 child: Text('Delete data with id'),
               ),

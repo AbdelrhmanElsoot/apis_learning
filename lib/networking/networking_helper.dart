@@ -5,14 +5,30 @@ import 'package:dio/dio.dart';
 class NetworkingHelper {
   final Dio dio = Dio();
 
+  NetworkingHelper() { 
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options , handler) { 
+          return handler.next(options) ; 
+        } , 
+        onResponse: (response , handler) {
+          return handler.next(response) ;  
+        },
+        onError: (error, handler) {
+          return handler.next(error) ; 
+        },
+      )
+    );
+  }
+
   //to get all data
   Future<void> getAllData() async {
     try {
       final response = await dio.get(
-        'https://reqres.in/api/users/1',
-        // we can get one post if we write /posts/1 ----> get post with id =1
+        'https://fakestoreapi.com/products/1',
+        // we can get one post if we write /products/1 ----> get products with id =1
       );
-      log(response.data.toString());
+      log(response.data['id'].toString());
     } catch (e) {
       log(e.toString());
     }
@@ -39,7 +55,7 @@ class NetworkingHelper {
   Future<void> deleteData({required int id}) async {
     try {
       final response = await dio.delete(
-        'https://jsonplaceholder.typicode.com/posts/$id',
+        'https://fakestoreapi.com/products/$id',
       );
       log(response.data.toString());
     } catch (e) {
